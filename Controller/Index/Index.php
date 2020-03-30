@@ -7,7 +7,7 @@ use Magento\Framework\App\Action\Action;
 use Magento\Framework\Controller\ResultFactory;
 
 /**
- * TODO index action.
+ * TODO index action
  *
  * @package Guerinteed\Todo\Controller\Index
  */
