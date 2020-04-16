@@ -8,6 +8,7 @@ define([
     //console.log("Mikeg Was Here!!");
     return Component.extend({
         defaults: {
+            newTaskLabel: '',
             tasks: [
                 {id: 1, label: "Task 1", status: false},
                 {id: 2, label: "Task 2", status: false},
@@ -17,7 +18,7 @@ define([
         },
 
         initObservable: function () {
-            this._super().observe(['tasks']);
+            this._super().observe(['tasks', 'newTaskLabel']);
             //this.tasks().push({label: 'Task 5'});
             return this;
         },
@@ -57,6 +58,15 @@ define([
                     }
                 }
             });
+        },
+
+        addTask: function() {
+            this.tasks.push({
+                id: Math.floor(Math.random() * 100),
+                label: this.newTaskLabel(),
+                status: false
+            });
+            this.newTaskLabel('');
         }
 
     });
