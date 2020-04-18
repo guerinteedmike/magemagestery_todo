@@ -3,7 +3,9 @@ declare(strict_types=1);
 
 namespace Guerinteed\Todo\Model\ResourceModel;
 
-class Task extends \Magento\Framework\Model\ResourceModel\Db\AbstractDb
+use Magento\Framework\Model\ResourceModel\Db\AbstractDb;
+
+class Task extends AbstractDb
 {
 
     /**
@@ -11,6 +13,6 @@ class Task extends \Magento\Framework\Model\ResourceModel\Db\AbstractDb
      */
     protected function _construct()
     {
-        $this->$this->_init(guerinteed_todo_task, task_id);
+        $this->$this->_init('guerinteed_todo_task', 'task_id');
     }
 }
