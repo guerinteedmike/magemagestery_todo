@@ -4,7 +4,12 @@ declare(strict_types=1);
 namespace Guerinteed\Todo\Controller\Index;
 
 use Magento\Framework\App\Action\Action;
+use Magento\Framework\App\Action\Context;
 use Magento\Framework\Controller\ResultFactory;
+use Guerinteed\Todo\Model\ResourceModel\Task as TaskResource;
+use Guerinteed\Todo\Model\Task;
+use Guerinteed\Todo\Model\TaskFactory;
+
 
 /**
  * TODO index action
@@ -14,12 +19,47 @@ use Magento\Framework\Controller\ResultFactory;
 class Index extends Action
 {
     /**
+     * @var TaskResource
+     */
+    private $taskResource;
+
+    /**
+     * @var TaskFactory
+     */
+    private $taskFactory;
+    /**
+     * Index constructor.
+     * @param Context $context
+     * @param TaskFactory $taskFactory
+     * @param TaskResource $taskResource
+     */
+    public function __construct(
+        Context $context,
+        TaskFactory $taskFactory,
+        TaskResource $taskResource
+    ) {
+        $this->taskResource = $taskResource;
+        $this->taskFactory = $taskFactory;
+        parent::__construct($context);
+    }
+
+    /**
      * TODO index action.
      *
      * @return ResultFactory
      */
     public function execute()
     {
+        /** @var Task $task */
+        $task = $this->taskFactory->create();
+        $task->setData([
+            'label' => 'New Task 22',
+            'status' => 'open',
+            'customer_id' => 1
+        ]);
+
+        $this->taskResource->save($task);
+
         return $this->resultFactory->create(ResultFactory::TYPE_PAGE);
     }
 }

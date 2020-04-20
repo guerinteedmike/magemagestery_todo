@@ -13,6 +13,6 @@ class Task extends AbstractDb
      */
     protected function _construct()
     {
-        $this->$this->_init('guerinteed_todo_task', 'task_id');
+        $this->_init('guerinteed_todo_task', 'task_id');
     }
 }
