@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Guerinteed\Todo\Api\TaskManagementInterface"
+                type="Guerinteed\Todo\Service\TaskManagement"/>
+    <preference for="Guerinteed\Todo\Api\TaskRepositoryInterface"
+                type="Guerinteed\Todo\Service\TaskRepository"/>
+    <preference for="Guerinteed\Todo\Api\Data\TaskInterface"
+                type="Guerinteed\Todo\Model\Task"/>
+    <preference for="Guerinteed\Todo\Api\Data\TaskSearchResultsInterface"
+                type="Guerinteed\Todo\Model\ResourceModel\Task\Collection"/>
+</config>
