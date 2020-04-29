@@ -4,6 +4,7 @@ declare(strict_types=1);
 namespace Guerinteed\Todo\Controller\Index;
 
 use Guerinteed\Todo\Service\TaskRepository;
+use Magento\Framework\Api\Search\SearchCriteriaBuilder;
 use Magento\Framework\App\Action\Action;
 use Magento\Framework\App\Action\Context;
 use Magento\Framework\Controller\ResultFactory;
@@ -35,21 +36,30 @@ class Index extends Action
     private $taskRepository;
 
     /**
+     * @var SearchCriteriaBuilder
+     */
+    private $searchCriteriaBuilder;
+
+    /**
      * Index constructor.
      * @param Context $context
      * @param TaskFactory $taskFactory
      * @param TaskResource $taskResource
+     * @param TaskRepository $taskRepository
+     * @param SearchCriteriaBuilder $searchCriteriaBuilder
      */
     public function __construct(
         Context $context,
         TaskFactory $taskFactory,
         TaskResource $taskResource,
-        TaskRepository $taskRepository
+        TaskRepository $taskRepository,
+        SearchCriteriaBuilder $searchCriteriaBuilder
     ) {
         $this->taskResource = $taskResource;
         $this->taskFactory = $taskFactory;
         $this->taskRepository = $taskRepository;
         parent::__construct($context);
+        $this->searchCriteriaBuilder = $searchCriteriaBuilder;
     }
 
     /**
@@ -59,10 +69,11 @@ class Index extends Action
      */
     public function execute()
     {
-        $task = $this->taskRepository->get(1);
+        //$task = $this->taskRepository->getList($this->searchCriteriaBuilder->create())->getItems());
 
-        var_dump($task->getData());
+        var_dump($this->taskRepository->getList($this->searchCriteriaBuilder->create())->getItems());
 
+        return;
         /** @var Task $task */
         /*$task = $this->taskFactory->create();
         $task->setData([
