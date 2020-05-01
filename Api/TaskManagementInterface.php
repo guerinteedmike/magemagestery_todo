@@ -3,6 +3,8 @@ declare(strict_types=1);
 
 namespace Guerinteed\Todo\Api;
 
+use Guerinteed\Todo\Api\Data\TaskInterface;
+
 /**
  * Interface TaskManagementInterface
  *
@@ -10,6 +12,6 @@ namespace Guerinteed\Todo\Api;
  */
 interface TaskManagementInterface
 {
-    public function save();
-    public function delete();
+    public function save(TaskInterface $task);
+    public function delete(TaskInterface $task);
 }
