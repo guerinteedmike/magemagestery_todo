@@ -8,4 +8,6 @@
                 type="Guerinteed\Todo\Model\Task"/>
     <preference for="Guerinteed\Todo\Api\Data\TaskSearchResultsInterface"
                 type="Guerinteed\Todo\Model\ResourceModel\Task\Collection"/>
+    <preference for="Guerinteed\Todo\Api\Data\CustomerTaskListInterface"
+                type="Guerinteed\Todo\Service\CustomerTaskList"/>
 </config>
