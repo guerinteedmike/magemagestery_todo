@@ -7,7 +7,7 @@ use Guerinteed\Todo\Api\Data\TaskInterface;
 use Guerinteed\Todo\Api\TaskRepositoryInterface;
 use Magento\Framework\Api\SearchCriteriaBuilder;
 
-class CustomerTaskList implements \Guerinteed\Todo\Api\Data\CustomerTaskListInterface
+class CustomerTaskList implements \Guerinteed\Todo\Api\CustomerTaskListInterface
 {
     /**
      * @var TaskRepositoryInterface;

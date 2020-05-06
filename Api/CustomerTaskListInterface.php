@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Guerinteed\Todo\Api\Data;
+namespace Guerinteed\Todo\Api;
 
 use Guerinteed\Todo\Api\Data\TaskInterface;
 
