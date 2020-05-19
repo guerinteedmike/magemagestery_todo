@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace Guerinteed\Todo\Service;
 
+use Guerinteed\Todo\Api\Data\TaskInterface;
 use Guerinteed\Todo\Api\Data\TaskSearchResultsInterface;
 use Guerinteed\Todo\Api\Data\TaskSearchResultsInterfaceFactory;
 use Guerinteed\Todo\Api\TaskRepositoryInterface;
@@ -60,7 +61,11 @@ class TaskRepository implements \Guerinteed\Todo\Api\TaskRepositoryInterface
         return $searchResults;
     }
 
-    public function get(int $taskId)
+    /**
+     * @param int $taskId
+     * @return TaskInterface
+     */
+    public function get(int $taskId): TaskInterface
     {
         $object = $this->taskFactory->create();
         $this->resource->load($object, $taskId);

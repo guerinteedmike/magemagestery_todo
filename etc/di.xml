@@ -10,4 +10,6 @@
                 type="Guerinteed\Todo\Model\ResourceModel\Task\Collection"/>
     <preference for="Guerinteed\Todo\Api\CustomerTaskListInterface"
                 type="Guerinteed\Todo\Service\CustomerTaskList"/>
+    <preference for="Guerinteed\Todo\Api\TaskStatusManagementInterface"
+                type="Guerinteed\Todo\Service\TaskStatusManagement"/>
 </config>
