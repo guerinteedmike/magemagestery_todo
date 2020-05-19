@@ -4,7 +4,6 @@ declare(strict_types=1);
 namespace Guerinteed\Todo\Model\ResourceModel;
 
 use Magento\Framework\Model\ResourceModel\Db\AbstractDb;
-use Magento\Tests\NamingConvention\true\string;
 
 class Task extends AbstractDb
 {
