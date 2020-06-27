@@ -31,9 +31,8 @@
                 'data-id': task().task_id
             },
             click: switchStatus
-        "></a>
-        <span class="label" data-bind="text: task().label"/>
-        <a data-bind="
+        " translate="task().label"></a>
+        <a class="action delete" data-bind="
             attr: {
                 'data-bind': task().task_id
             },
